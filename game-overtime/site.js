@@ -46,44 +46,70 @@ document.getElementById("next-console").addEventListener("click", () => {
   title.focus({preventScroll: true});
 });
 
-const storyTabs = Array.from(document.querySelectorAll(".scene-switch [role=tab]"));
-const story = document.getElementById("story-image");
-const storyArt = {
-  "tv-tab": {
-    large: "assets/une-vie-chacun.webp", small: "assets/une-vie-chacun-640.webp",
-    alt: "Sur le canapé, un père passe la manette à sa fille devant un passage secret."
-  },
-  "hand-tab": {
-    large: "assets/station-nacre.webp", small: "assets/station-nacre.webp",
-    alt: "Sur le téléphone en paysage, les touches entourent le jeu de la station Nacre."
-  }
-};
+function setupPlayCarousel(carousel) {
+  const slides = Array.from(carousel.querySelectorAll(".feature-slide"));
+  const picker = carousel.querySelector(".feature-picker");
+  const arrows = carousel.querySelector(".feature-arrows");
+  const status = carousel.querySelector(".feature-status");
+  let current = 0;
+  let swipeStart = null;
 
-function chooseStory(tab) {
-  for (const item of storyTabs) {
-    const selected = item === tab;
-    item.setAttribute("aria-selected", String(selected));
-    item.tabIndex = selected ? 0 : -1;
-    document.getElementById(item.getAttribute("aria-controls")).hidden = !selected;
-  }
-  const art = storyArt[tab.id];
-  story.querySelector("source").srcset = art.small;
-  const img = story.querySelector("img");
-  img.src = art.large;
-  img.alt = art.alt;
-  story.parentElement.classList.toggle("is-pocket", tab.id === "hand-tab");
-}
-for (const [index, tab] of storyTabs.entries()) {
-  tab.addEventListener("click", () => chooseStory(tab));
-  tab.addEventListener("keydown", (event) => {
-    const keys = ["ArrowLeft", "ArrowRight", "Home", "End"];
-    if (!keys.includes(event.key)) return;
-    event.preventDefault();
-    const next = event.key === "Home" ? 0 : event.key === "End" ? storyTabs.length - 1 : (index + 1) % storyTabs.length;
-    chooseStory(storyTabs[next]);
-    storyTabs[next].focus();
+  const tabs = slides.map((slide, index) => {
+    const tab = document.createElement("button");
+    tab.type = "button";
+    tab.id = slide.id + "-tab";
+    tab.textContent = slide.dataset.label;
+    tab.setAttribute("role", "tab");
+    tab.setAttribute("aria-controls", slide.id);
+    slide.setAttribute("role", "tabpanel");
+    slide.setAttribute("aria-labelledby", tab.id);
+    tab.addEventListener("click", () => showFeature(index));
+    picker.append(tab);
+    return tab;
   });
+
+  function showFeature(index, announce = false) {
+    current = (index + slides.length) % slides.length;
+    slides.forEach((slide, position) => {
+      const selected = position === current;
+      slide.hidden = !selected;
+      tabs[position].tabIndex = selected ? 0 : -1;
+      tabs[position].setAttribute("aria-selected", String(selected));
+    });
+    status.textContent = announce ? slides[current].dataset.label + ", " + (current + 1) + " sur " + slides.length : "";
+  }
+
+  picker.addEventListener("keydown", (event) => {
+    const destinations = { ArrowLeft: current - 1, ArrowRight: current + 1, Home: 0, End: slides.length - 1 };
+    if (!Object.hasOwn(destinations, event.key)) return;
+    event.preventDefault();
+    showFeature(destinations[event.key]);
+    tabs[current].focus({preventScroll: true});
+  });
+  arrows.querySelector(".feature-prev").addEventListener("click", () => showFeature(current - 1, true));
+  arrows.querySelector(".feature-next").addEventListener("click", () => showFeature(current + 1, true));
+
+  carousel.addEventListener("pointerdown", (event) => {
+    swipeStart = null;
+    if (event.pointerType === "mouse" || !event.isPrimary || !event.target.closest(".feature-slide") || event.target.closest("a")) return;
+    swipeStart = { id: event.pointerId, x: event.clientX, y: event.clientY };
+  });
+  carousel.addEventListener("pointerup", (event) => {
+    if (!swipeStart || event.pointerId !== swipeStart.id) return;
+    const dx = event.clientX - swipeStart.x;
+    const dy = event.clientY - swipeStart.y;
+    swipeStart = null;
+    if (Math.abs(dx) >= 40 && Math.abs(dx) > 1.4 * Math.abs(dy)) showFeature(current + (dx < 0 ? 1 : -1), true);
+  });
+  carousel.addEventListener("pointercancel", () => { swipeStart = null; });
+
+  showFeature(0);
+  carousel.classList.add("is-ready");
+  carousel.closest("section").setAttribute("aria-roledescription", "carrousel");
+  picker.hidden = false;
+  arrows.hidden = false;
 }
+document.querySelectorAll(".play-carousel").forEach(setupPlayCarousel);
 
 const guideImage = document.getElementById("guide-picture");
 const guideArt = document.getElementById("guide-art");
@@ -95,7 +121,10 @@ const guideAlts = {
 const guides = Array.from(document.querySelectorAll(".guide-entry"));
 guides.forEach((guide) => {
   guide.addEventListener("toggle", () => {
-    if (!guide.open) return;
+    if (!guide.open) {
+      if (!guides.some((item) => item.open)) guide.open = true;
+      return;
+    }
     for (const other of guides) if (other !== guide) other.open = false;
     const key = guide.dataset.guide;
     const link = guide.querySelector(".guide-text a");
