@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#100c1e">
+  <title>Game OverTime – L’émulateur rétro pour Android</title>
+  <meta name="description" content="Passe-moi la manette ! Retrouve tes jeux NES, Super NES, Game Boy, Game Boy Color, Game Boy Advance et Nintendo DS sur Android. Six consoles, sans publicité, jusque sur la télé.">
+  <link rel="canonical" href="https://pelleas6.github.io/sites_app_android/game-overtime/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Game OverTime">
+  <meta property="og:title" content="Game OverTime · Passe-moi la manette !">
+  <meta property="og:description" content="Six consoles rétro sur Android. Retrouve ta collection et fais découvrir tes jeux de cœur à la génération suivante.">
+  <meta property="og:url" content="https://pelleas6.github.io/sites_app_android/game-overtime/">
+  <meta property="og:image" content="https://pelleas6.github.io/sites_app_android/game-overtime/assets/partage.jpg">
+  <meta property="og:image:alt" content="L’OVNI de Game OverTime survole une galaxie de consoles rétro.">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preload" href="assets/jersey.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="assets/cartouche-bold.woff" as="font" type="font/woff" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#accueil">Aller au contenu</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="wordmark" href="#accueil" aria-label="Game OverTime, accueil">
+        <img src="assets/ovni.png" width="44" height="44" alt="">
+        <span>Game OverTime</span>
+      </a>
+      <nav class="nav-main" aria-label="Navigation principale">
+        <a href="#consoles">Les consoles</a>
+        <a href="#salon">Le salon</a>
+        <a href="#appli">Dans l’appli</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="android-link" href="#android"><i class="ico android-icon" aria-hidden="true"></i>Accès Android</a>
+        <details class="mobile-nav">
+          <summary aria-label="Menu de navigation"><i class="ico menu-icon" aria-hidden="true"></i></summary>
+          <nav aria-label="Menu mobile">
+            <a href="#consoles">Les consoles</a><a href="#salon">Le salon</a><a href="#appli">Dans l’appli</a><a href="#android">Accès Android</a>
+          </nav>
+        </details>
+      </div>
+    </div>
+  </header>
+
+  <main id="accueil">
+    <section class="hero" aria-labelledby="hero-title">
+      <picture class="hero-art">
+        <source media="(max-width: 740px)" srcset="assets/ovni-mobile.webp">
+        <source media="(max-width: 1240px)" srcset="assets/ovni-galaxie-1280.webp">
+        <img src="assets/ovni-galaxie.webp" width="1902" height="827" alt="Le pilote OVNI attire une console de poche dans le rayon vert de sa soucoupe." fetchpriority="high">
+      </picture>
+      <div class="hero-veil" aria-hidden="true"></div>
+      <div class="wrap hero-inner">
+        <div class="hero-copy">
+          <p class="hero-tag"><i class="ico alien-icon" aria-hidden="true"></i> Émulateur rétro pour Android</p>
+          <h1 id="hero-title">Passe-moi<span class="pixel hero-pixel">la manette&nbsp;!</span></h1>
+          <p class="hero-lead">Retrouve tes jeux d’enfance. Cette fois, c’est peut-être ton enfant qui te montrera le passage secret.</p>
+          <div class="hero-actions">
+            <a class="btn btn-lime" href="#consoles"><i class="ico pad-icon" aria-hidden="true"></i>Explorer les consoles</a>
+            <a class="btn btn-outline" data-film href="assets/intro-ovni.mp4"><i class="ico play-icon" aria-hidden="true"></i>Voir l’intro</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="ribbon" aria-label="Game OverTime en bref">
+      <ul class="wrap">
+        <li><i class="ico pad-icon" aria-hidden="true"></i>6 consoles</li>
+        <li><i class="ico heart-icon" aria-hidden="true"></i>Sans publicité</li>
+        <li><i class="ico offline-icon" aria-hidden="true"></i>Hors connexion</li>
+        <li><i class="ico bluetooth-icon" aria-hidden="true"></i>Manette Bluetooth</li>
+      </ul>
+    </div>
+
+    <section class="shelf section" id="consoles" aria-labelledby="shelf-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="shelf-title">Choisis ta <span class="pixel accent-lilac">console.</span></h2>
+          <p>Ouvre une fiche pour retrouver ses boutons<br class="wide-only"> et ses formats de jeu.</p>
+        </div>
+        <div class="console-shelf">
+          <details class="console-card coral" data-system="nes">
+            <summary aria-label="Ouvrir la fiche NES">
+              <span class="cart-ridges" aria-hidden="true"></span>
+              <span class="console-art"><img src="assets/nes.webp" width="180" height="110" loading="lazy" alt=""></span>
+              <span class="console-label"><span class="console-family">Salon</span><strong>NES</strong></span>
+              <span class="card-plus" aria-hidden="true"><i class="ico plus-icon"></i></span><span class="contacts" aria-hidden="true"></span>
+            </summary>
+            <div class="hardware-data"><p>Un couloir, trois plateformes et un saut au pixel près. Il reste une vie. À qui de jouer ?</p><dl><div><dt>Fichiers de jeu</dt><dd><code>.nes</code></dd></div><div><dt>Commandes</dt><dd>Croix directionnelle, A, B, Start et Select.</dd></div></dl></div>
+          </details>
+          <details class="console-card violet" data-system="sfc">
+            <summary aria-label="Ouvrir la fiche Super NES">
+              <span class="cart-ridges" aria-hidden="true"></span>
+              <span class="console-art"><img src="assets/sfc.webp" width="180" height="110" loading="lazy" alt=""></span>
+              <span class="console-label"><span class="console-family">Salon</span><strong>Super NES</strong></span>
+              <span class="card-plus" aria-hidden="true"><i class="ico plus-icon"></i></span><span class="contacts" aria-hidden="true"></span>
+            </summary>
+            <div class="hardware-data"><p>Le canapé du mercredi, les grandes cartes à explorer et cette combinaison de boutons que tes doigts connaissent encore.</p><dl><div><dt>Fichiers de jeu</dt><dd><code>.sfc</code> <code>.smc</code></dd></div><div><dt>Commandes</dt><dd>Croix directionnelle, A, B, X, Y, L, R, Start et Select.</dd></div></dl></div>
+          </details>
+          <details class="console-card leaf" data-system="gb">
+            <summary aria-label="Ouvrir la fiche Game Boy">
+              <span class="cart-ridges" aria-hidden="true"></span>
+              <span class="console-art"><img src="assets/gb.webp" width="180" height="110" loading="lazy" alt=""></span>
+              <span class="console-label"><span class="console-family">Portable</span><strong>Game Boy</strong></span>
+              <span class="card-plus" aria-hidden="true"><i class="ico plus-icon"></i></span><span class="contacts" aria-hidden="true"></span>
+            </summary>
+            <div class="hardware-data"><p>Un écran vert, deux boutons et un monde entier dans la poche. Qui se rappelle encore le chemin du premier niveau ?</p><dl><div><dt>Fichiers de jeu</dt><dd><code>.gb</code></dd></div><div><dt>Commandes</dt><dd>Croix directionnelle, A, B, Start et Select.</dd></div></dl></div>
+          </details>
+          <details class="console-card rose" data-system="gbc">
+            <summary aria-label="Ouvrir la fiche Game Boy Color">
+              <span class="cart-ridges" aria-hidden="true"></span>
+              <span class="console-art"><img src="assets/gbc.webp" width="180" height="110" loading="lazy" alt=""></span>
+              <span class="console-label"><span class="console-family">Portable</span><strong>Game Boy Color</strong></span>
+              <span class="card-plus" aria-hidden="true"><i class="ico plus-icon"></i></span><span class="contacts" aria-hidden="true"></span>
+            </summary>
+            <div class="hardware-data"><p>La couleur change tout. Cette forêt que tu traversais sur un petit écran se remplit soudain de nuances.</p><dl><div><dt>Fichiers de jeu</dt><dd><code>.gbc</code></dd></div><div><dt>Commandes</dt><dd>Croix directionnelle, A, B, Start et Select.</dd></div></dl></div>
+          </details>
+          <details class="console-card aqua" data-system="gba">
+            <summary aria-label="Ouvrir la fiche Game Boy Advance">
+              <span class="cart-ridges" aria-hidden="true"></span>
+              <span class="console-art"><img src="assets/gba.webp" width="180" height="110" loading="lazy" alt=""></span>
+              <span class="console-label"><span class="console-family">Portable</span><strong>Game Boy Advance</strong></span>
+              <span class="card-plus" aria-hidden="true"><i class="ico plus-icon"></i></span><span class="contacts" aria-hidden="true"></span>
+            </summary>
+            <div class="hardware-data"><p>Une console à tenir en largeur, deux gâchettes sous les index et un décor qui défile jusqu’au fond du train.</p><dl><div><dt>Fichiers de jeu</dt><dd><code>.gba</code></dd></div><div><dt>Commandes</dt><dd>Croix directionnelle, A, B, L, R, Start et Select.</dd></div></dl></div>
+          </details>
+          <details class="console-card gold" data-system="nds">
+            <summary aria-label="Ouvrir la fiche Nintendo DS">
+              <span class="cart-ridges" aria-hidden="true"></span>
+              <span class="console-art"><img src="assets/nds.webp" width="180" height="110" loading="lazy" alt=""></span>
+              <span class="console-label"><span class="console-family">Portable</span><strong>Nintendo DS</strong></span>
+              <span class="card-plus" aria-hidden="true"><i class="ico plus-icon"></i></span><span class="contacts" aria-hidden="true"></span>
+            </summary>
+            <div class="hardware-data"><p>Un indice en haut, une action en bas. Retrouve les jeux qui te faisaient jongler entre deux écrans.</p><dl><div><dt>Fichiers de jeu</dt><dd><code>.nds</code></dd></div><div><dt>Commandes</dt><dd>Deux écrans, zone tactile, croix directionnelle, A, B, X, Y, L, R, Start et Select.</dd></div></dl></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="living section" id="salon" aria-labelledby="living-title">
+      <div class="wrap living-layout">
+        <div class="living-picture">
+          <picture id="story-image">
+            <source media="(max-width: 740px)" srcset="assets/une-vie-chacun-640.webp">
+            <img src="assets/une-vie-chacun.webp" width="1080" height="720" loading="lazy" alt="Sur le canapé, un père passe la manette à sa fille devant un passage secret.">
+          </picture>
+          <span class="frame-pin pin-tl" aria-hidden="true"></span><span class="frame-pin pin-br" aria-hidden="true"></span>
+        </div>
+        <div class="living-copy">
+          <div class="scene-switch" role="tablist" aria-label="Où jouer">
+            <button id="tv-tab" role="tab" aria-selected="true" aria-controls="tv-panel" type="button"><i class="ico tv-icon" aria-hidden="true"></i>Sur la télé</button>
+            <button id="hand-tab" role="tab" aria-selected="false" aria-controls="hand-panel" tabindex="-1" type="button"><i class="ico pocket-icon" aria-hidden="true"></i>Dans ta poche</button>
+          </div>
+          <h2 id="living-title">À chacun son <span class="pixel accent-peach">tour.</span></h2>
+          <div id="tv-panel" class="scene-panel" role="tabpanel" aria-labelledby="tv-tab">
+            <p class="lead">La règle du soir&nbsp;? Une vie chacun. Celui qui a repéré la porte cachée a le droit de crier «&nbsp;Là, sur ta gauche&nbsp;!&nbsp;».</p>
+            <p>Associe ta manette Bluetooth au téléphone, active le mode TV dans Game OverTime, puis duplique l’écran sur un téléviseur compatible. Sur un Samsung compatible, utilise Smart View.</p>
+            <a class="text-link" href="assets/tele-manette.webp" data-lightbox="Manette Bluetooth et mode TV">Voir la fiche TV <i class="ico zoom-icon" aria-hidden="true"></i></a>
+          </div>
+          <div id="hand-panel" class="scene-panel" role="tabpanel" aria-labelledby="hand-tab" hidden>
+            <p class="lead">La télé est prise&nbsp;? Ta collection tient dans ta poche. Même dans le train, tu peux tenter ce fameux saut.</p>
+            <p>Dans Thèmes, déplace la croix et les boutons à portée de tes pouces, puis ajuste leur taille. Enregistre une disposition par console et retouche-la en partie depuis Pause.</p>
+            <a class="text-link" href="assets/station-nacre-affiche.webp" data-lightbox="Les commandes tactiles en paysage">Voir les commandes à l’écran <i class="ico zoom-icon" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="manual section" id="appli" aria-labelledby="manual-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="manual-title">Dans <span class="pixel accent-cyan">l’appli.</span></h2>
+          <p>De la boîte à cartouches<br class="wide-only"> à la prochaine sauvegarde.</p>
+        </div>
+        <div class="manual-layout">
+          <div class="guide-choices">
+            <details name="guide" class="guide-entry" data-guide="importer" open>
+              <summary><i class="ico cart-icon" aria-hidden="true"></i><span>Retrouve tes jeux</span><i class="fold-sign" aria-hidden="true"></i></summary>
+              <div class="guide-text"><p>Touche «&nbsp;Rechercher mes jeux&nbsp;» ou choisis un dossier. Game OverTime classe tes fichiers par console et regroupe les copies identiques. Quelques lettres suffisent pour retrouver un titre.</p><a href="assets/importer-affiche.webp" data-lightbox="Rechercher et importer tes jeux">Agrandir la fiche illustrée</a></div>
+            </details>
+            <details name="guide" class="guide-entry" data-guide="jaquettes">
+              <summary><i class="ico box-icon" aria-hidden="true"></i><span>Choisis ta jaquette</span><i class="fold-sign" aria-hidden="true"></i></summary>
+              <div class="guide-text"><p>Le nom t’échappe, mais tu reconnaîtrais la boîte entre mille. Ouvre Jaquettes, agrandis l’aperçu et choisis ton édition. L’image reste sur ton téléphone.</p><a href="assets/jaquettes-affiche.webp" data-lightbox="Associer une jaquette à son jeu">Agrandir la fiche illustrée</a></div>
+            </details>
+            <details name="guide" class="guide-entry" data-guide="reprendre">
+              <summary><i class="ico flag-icon" aria-hidden="true"></i><span>Reprends ta partie</span><i class="fold-sign" aria-hidden="true"></i></summary>
+              <div class="guide-text"><p>Tu t’arrêtes devant le château&nbsp;? Sauvegarde avant de quitter. Depuis l’accueil, retrouve ton dernier jeu et laisse à quelqu’un d’autre le plaisir d’ouvrir la grande porte.</p><a href="assets/reprendre-affiche.webp" data-lightbox="Retrouver ta dernière partie">Agrandir la fiche illustrée</a></div>
+            </details>
+          </div>
+          <a class="guide-art" id="guide-art" href="assets/importer-affiche.webp" data-lightbox="Rechercher et importer tes jeux" aria-label="Agrandir la fiche illustrée sur l’importation des jeux">
+            <img id="guide-picture" src="assets/importer.webp" width="900" height="549" loading="lazy" alt="Trois cartouches à étiquette OVNI dans un coffret bleu translucide.">
+            <span class="enlarge"><i class="ico zoom-icon" aria-hidden="true"></i></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="android-section" id="android" aria-labelledby="android-title">
+      <div class="wrap">
+        <div class="android-panel">
+          <div class="android-emblem"><img src="assets/icone-android.png" width="126" height="126" loading="lazy" alt="Icône OVNI de Game OverTime"></div>
+          <div class="android-copy">
+            <h2 id="android-title">On reprend <span class="pixel">demain&nbsp;?</span></h2>
+            <p>Tu participes au test Android&nbsp;? Retrouve Game OverTime sur Google Play avec le compte inscrit au test.</p>
+            <div class="end-actions">
+              <a class="btn btn-dark" href="https://play.google.com/apps/testing/app.cartouche.player"><i class="ico android-icon" aria-hidden="true"></i>Accès testeurs Google Play</a>
+              <a class="contact-link" href="mailto:ovnis.app@gmail.com"><i class="ico mail-icon" aria-hidden="true"></i>Contacter l’équipe</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-top">
+        <a class="wordmark" href="#accueil"><img src="assets/ovni.png" width="38" height="38" alt=""><span>Game OverTime</span></a>
+        <nav aria-label="Liens utiles"><a href="https://pelleas6.github.io/Confidentialite/retro-emulator/">Confidentialité</a><a href="mailto:ovnis.app@gmail.com">Assistance</a></nav>
+      </div>
+      <p>Game OverTime est un émulateur indépendant, non affilié à Nintendo ni approuvé par Nintendo. Aucun jeu n’est fourni. Ajoute tes propres fichiers compatibles et extrais les archives avant l’importation.</p>
+    </div>
+  </footer>
+
+  <dialog id="console-dialog" class="modal hardware-dialog" aria-labelledby="console-title">
+    <div class="modal-tools"><button class="close-modal" type="button" aria-label="Fermer la fiche console" data-dismiss><i class="ico close-icon" aria-hidden="true"></i></button></div>
+    <div class="hardware-top"><img id="detail-image" alt="" width="260" height="175"><div><p id="detail-family" class="detail-family"></p><h2 id="console-title"></h2></div></div>
+    <div id="detail-copy"></div>
+    <div class="console-pagination"><button id="next-console" class="btn btn-outline" type="button">Console suivante</button></div>
+  </dialog>
+
+  <dialog id="media-dialog" class="modal media-dialog" aria-labelledby="media-title">
+    <div class="media-head"><h2 id="media-title"></h2><button class="close-modal" data-dismiss type="button" aria-label="Fermer l’aperçu"><i class="ico close-icon" aria-hidden="true"></i></button></div>
+    <div id="media-content"></div>
+  </dialog>
+</body>
+</html>
