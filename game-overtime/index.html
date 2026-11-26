@@ -20,8 +20,8 @@
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="preload" href="assets/jersey.woff" as="font" type="font/woff" crossorigin>
   <link rel="preload" href="assets/cartouche-bold.woff" as="font" type="font/woff" crossorigin>
-  <link rel="stylesheet" href="style.css?v=2">
-  <script src="site.js?v=2" defer></script>
+  <link rel="stylesheet" href="style.css?v=3">
+  <script src="site.js?v=3" defer></script>
 </head>
 <body>
   <a class="skip" href="#accueil">Aller au contenu</a>
@@ -63,7 +63,7 @@
           <p class="hero-lead">Retrouve tes jeux d’enfance. Cette fois, c’est peut-être ton enfant qui te montrera le passage secret.</p>
           <div class="hero-actions">
             <a class="btn btn-lime" href="#consoles"><i class="ico pad-icon" aria-hidden="true"></i>Explorer les consoles</a>
-            <a class="btn btn-outline" data-film href="assets/intro-ovni.mp4"><i class="ico play-icon" aria-hidden="true"></i>Voir l’intro</a>
+            <a class="btn btn-outline" data-film href="assets/intro-game-overtime.mp4" aria-label="Voir l’intro de Game OverTime, 55 secondes"><i class="ico play-icon" aria-hidden="true"></i>Voir l’intro</a>
           </div>
         </div>
       </div>
@@ -147,54 +147,6 @@
       <div class="wrap play-carousel">
         <div class="feature-picker" role="tablist" aria-label="Choisir une fonctionnalité" hidden></div>
 
-        <article class="feature-slide" id="bluetooth-panel" data-label="Bluetooth">
-          <div class="feature-media">
-            <img src="assets/manette-bluetooth.webp" width="960" height="540" loading="lazy" alt="Manette violette sans fil avec croix directionnelle et boutons d’action.">
-          </div>
-          <div class="feature-copy">
-            <h2>Ta manette <span class="pixel accent-peach">Bluetooth.</span></h2>
-            <p>Dans <strong>Réglages → Manette Bluetooth</strong>, touche «&nbsp;Rechercher une manette&nbsp;» et associe-la au téléphone. De retour en jeu, utilise la croix ou le stick gauche pour te déplacer.</p>
-            <p>Si ta manette se déconnecte en pleine partie, le jeu se met en pause et les touches tactiles réapparaissent.</p>
-            <a class="text-link" href="assets/manette-bluetooth-fiche.webp" data-lightbox="Manette Bluetooth sur téléphone">Voir la fiche Bluetooth <i class="ico zoom-icon" aria-hidden="true"></i></a>
-          </div>
-        </article>
-
-        <article class="feature-slide" id="fullscreen-panel" data-label="Plein écran">
-          <div class="feature-media">
-            <img src="assets/plein-ecran.webp" width="1280" height="720" loading="lazy" alt="Capture du jeu en plein écran sur le téléphone, avec le paysage lunaire et les touches tactiles masquées.">
-          </div>
-          <div class="feature-copy">
-            <h2>Ton téléphone en <span class="pixel accent-peach">plein écran.</span></h2>
-            <p>Avec <strong>Plein écran automatique</strong>, activé par défaut, les boutons à l’écran s’effacent dès que l’appli détecte ta manette. L’image s’agrandit en gardant les proportions de la console.</p>
-            <p>Pour retrouver les boutons, appuie sur Retour puis sur «&nbsp;Afficher les commandes tactiles&nbsp;».</p>
-            <a class="text-link" href="assets/plein-ecran.webp" data-lightbox="Capture du plein écran sur téléphone">Agrandir la capture <i class="ico zoom-icon" aria-hidden="true"></i></a>
-          </div>
-        </article>
-
-        <article class="feature-slide" id="editor-panel" data-label="Boutons">
-          <div class="feature-media">
-            <img src="assets/editeur-boutons.webp" width="1280" height="720" loading="lazy" alt="Capture de l’éditeur. Le bouton A est sélectionné et les commandes moins et plus règlent sa taille.">
-          </div>
-          <div class="feature-copy">
-            <h2>Les boutons sous <span class="pixel accent-peach">tes pouces.</span></h2>
-            <p>Depuis <strong>Thèmes</strong> ou <strong>Pause → Régler les boutons</strong>, fais glisser la croix ou un bouton où ton pouce tombe naturellement. Sélectionne-le puis utilise − et + pour ajuster sa taille de 60 à 180&nbsp;%.</p>
-            <p>Enregistre ton réglage. Chaque console garde sa propre disposition, en portrait comme en paysage.</p>
-            <a class="text-link" href="assets/editeur-boutons.webp" data-lightbox="L’éditeur des commandes tactiles">Agrandir l’éditeur <i class="ico zoom-icon" aria-hidden="true"></i></a>
-          </div>
-        </article>
-
-        <article class="feature-slide" id="hand-panel" data-label="Tactile">
-          <div class="feature-media feature-phone">
-            <img src="assets/station-nacre.webp" width="1040" height="520" loading="lazy" alt="Le téléphone en paysage, la croix à gauche et les boutons à droite du jeu.">
-          </div>
-          <div class="feature-copy">
-            <h2>Une partie dans <span class="pixel accent-peach">ta poche.</span></h2>
-            <p>Dans <strong>Pause → Orientation de l’écran</strong>, choisis le portrait ou le paysage pour la console que tu utilises. La croix et les boutons entourent l’image du jeu.</p>
-            <p>Sur Nintendo DS, touche directement l’écran inférieur avec ton doigt pour utiliser le stylet.</p>
-            <a class="text-link" href="assets/station-nacre-affiche.webp" data-lightbox="Les commandes tactiles en paysage">Voir les commandes à l’écran <i class="ico zoom-icon" aria-hidden="true"></i></a>
-          </div>
-        </article>
-
         <article class="feature-slide" id="tv-panel" data-label="Télé">
           <div class="feature-media">
             <picture>
@@ -206,8 +158,56 @@
             <h2>À chacun son <span class="pixel accent-peach">tour.</span></h2>
             <p>Dans <strong>Réglages → Manette Bluetooth</strong>, active le mode TV. Avec la manette connectée au téléphone, la partie passe en paysage plein écran.</p>
             <p>Duplique ensuite l’écran sur un téléviseur compatible, avec Smart View sur un Samsung compatible. Il ne reste qu’à décider qui prend la première vie.</p>
-            <a class="text-link" href="assets/tele-manette.webp" data-lightbox="Manette Bluetooth et mode TV">Voir la fiche TV <i class="ico zoom-icon" aria-hidden="true"></i></a>
           </div>
+          <a class="text-link" href="assets/tele-manette.webp" data-lightbox="Manette Bluetooth et mode TV">Voir la fiche TV <i class="ico zoom-icon" aria-hidden="true"></i></a>
+        </article>
+
+        <article class="feature-slide" id="bluetooth-panel" data-label="Bluetooth">
+          <div class="feature-media">
+            <img src="assets/manette-bluetooth.webp" width="960" height="540" loading="lazy" alt="Manette violette sans fil avec croix directionnelle et boutons d’action.">
+          </div>
+          <div class="feature-copy">
+            <h2>Ta manette <span class="pixel accent-peach">Bluetooth.</span></h2>
+            <p>Dans <strong>Réglages → Manette Bluetooth</strong>, touche «&nbsp;Rechercher une manette&nbsp;» et associe-la au téléphone. De retour en jeu, utilise la croix ou le stick gauche pour te déplacer.</p>
+            <p>Si ta manette se déconnecte en pleine partie, le jeu se met en pause et les touches tactiles réapparaissent.</p>
+          </div>
+          <a class="text-link" href="assets/manette-bluetooth-fiche.webp" data-lightbox="Manette Bluetooth sur téléphone">Voir la fiche Bluetooth <i class="ico zoom-icon" aria-hidden="true"></i></a>
+        </article>
+
+        <article class="feature-slide" id="fullscreen-panel" data-label="Plein écran">
+          <div class="feature-media feature-game">
+            <img src="assets/vol-canyon.webp" width="960" height="640" loading="lazy" alt="Un biplan rouge file vers une enveloppe au-dessus d’un aqueduc. Le score et la jauge restent visibles en plein écran.">
+          </div>
+          <div class="feature-copy">
+            <h2>Ton téléphone en <span class="pixel accent-peach">plein écran.</span></h2>
+            <p>Avec <strong>Plein écran automatique</strong>, activé par défaut, les boutons à l’écran s’effacent dès que l’appli détecte ta manette. L’image s’agrandit en gardant les proportions de la console.</p>
+            <p>Pour retrouver les boutons, appuie sur Retour puis sur «&nbsp;Afficher les commandes tactiles&nbsp;».</p>
+          </div>
+          <a class="text-link" href="assets/vol-canyon.webp" data-lightbox="Le vol au-dessus du canyon en plein écran">Agrandir la capture <i class="ico zoom-icon" aria-hidden="true"></i></a>
+        </article>
+
+        <article class="feature-slide" id="editor-panel" data-label="Boutons">
+          <div class="feature-media">
+            <img src="assets/editeur-vol-canyon.webp" width="1280" height="720" loading="lazy" alt="L’éditeur entoure le jeu de vol. Le bouton A est sélectionné à droite et les touches moins et plus règlent sa taille.">
+          </div>
+          <div class="feature-copy">
+            <h2>Les boutons sous <span class="pixel accent-peach">tes pouces.</span></h2>
+            <p>Depuis <strong>Thèmes</strong> ou <strong>Pause → Régler les boutons</strong>, fais glisser la croix ou un bouton où ton pouce tombe naturellement. Sélectionne-le puis utilise − et + pour ajuster sa taille de 60 à 180&nbsp;%.</p>
+            <p>Enregistre ton réglage. Chaque console garde sa propre disposition, en portrait comme en paysage.</p>
+          </div>
+          <a class="text-link" href="assets/editeur-vol-canyon.webp" data-lightbox="L’éditeur des commandes tactiles">Agrandir l’éditeur <i class="ico zoom-icon" aria-hidden="true"></i></a>
+        </article>
+
+        <article class="feature-slide" id="hand-panel" data-label="Tactile">
+          <div class="feature-media feature-phone">
+            <img src="assets/station-nacre.webp" width="1040" height="520" loading="lazy" alt="Le téléphone en paysage, la croix à gauche et les boutons à droite du jeu.">
+          </div>
+          <div class="feature-copy">
+            <h2>Une partie dans <span class="pixel accent-peach">ta poche.</span></h2>
+            <p>Dans <strong>Pause → Orientation de l’écran</strong>, choisis le portrait ou le paysage pour la console que tu utilises. La croix et les boutons entourent l’image du jeu.</p>
+            <p>Sur Nintendo DS, touche directement l’écran inférieur avec ton doigt pour utiliser le stylet.</p>
+          </div>
+          <a class="text-link" href="assets/station-nacre-affiche.webp" data-lightbox="Les commandes tactiles en paysage">Voir les commandes à l’écran <i class="ico zoom-icon" aria-hidden="true"></i></a>
         </article>
 
         <div class="feature-arrows" role="group" aria-label="Parcourir les fonctionnalités" hidden>
@@ -284,6 +284,11 @@
   <dialog id="media-dialog" class="modal media-dialog" aria-labelledby="media-title">
     <div class="media-head"><h2 id="media-title"></h2><button class="close-modal" data-dismiss type="button" aria-label="Fermer l’aperçu"><i class="ico close-icon" aria-hidden="true"></i></button></div>
     <div id="media-content"></div>
+    <nav id="film-chapters" aria-label="Chapitres de la vidéo" hidden>
+      <button type="button" data-start="0" data-phase="ovni">L’OVNI</button>
+      <button type="button" data-start="9.433333" data-phase="appli">L’appli</button>
+      <button type="button" data-start="32" data-phase="partie">La partie</button>
+    </nav>
   </dialog>
 </body>
 </html>

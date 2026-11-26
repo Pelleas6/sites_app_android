@@ -138,25 +138,64 @@ guides.forEach((guide) => {
 
 const mediaDialog = document.getElementById("media-dialog");
 const mediaContent = document.getElementById("media-content");
+const filmChapters = document.getElementById("film-chapters");
+const chapterButtons = Array.from(filmChapters.querySelectorAll("button"));
+
+function setFilmChapter(time) {
+  const chapter = chapterButtons.findLast((button) => time >= Number(button.dataset.start)) || chapterButtons[0];
+  if (mediaDialog.dataset.phase === chapter.dataset.phase) return;
+  mediaDialog.dataset.phase = chapter.dataset.phase;
+  for (const button of chapterButtons) {
+    if (button === chapter) button.setAttribute("aria-current", "true");
+    else button.removeAttribute("aria-current");
+  }
+}
+
+function prepareFilm(video) {
+  video.controls = true;
+  video.playsInline = true;
+  video.poster = "assets/intro-demarrage.webp";
+  video.setAttribute("aria-label", "Présentation de Game OverTime, du démarrage à la partie de boxe");
+  const track = document.createElement("track");
+  track.kind = "captions";
+  track.label = "Description des images";
+  track.srclang = "fr";
+  track.src = "assets/intro-demo-fr.vtt";
+  video.append(track);
+  setFilmChapter(0);
+  const sync = () => { if (video.isConnected) setFilmChapter(video.currentTime); };
+  video.addEventListener("seeking", sync);
+  video.addEventListener("timeupdate", sync);
+  if (video.requestVideoFrameCallback) {
+    const followFrame = (_, frame) => {
+      if (!video.isConnected) return;
+      setFilmChapter(frame.mediaTime);
+      video.requestVideoFrameCallback(followFrame);
+    };
+    video.requestVideoFrameCallback(followFrame);
+  }
+}
+
+filmChapters.addEventListener("click", (event) => {
+  const button = event.target.closest("button[data-start]");
+  const video = mediaContent.querySelector("video");
+  if (!button || !video) return;
+  video.currentTime = Number(button.dataset.start);
+  video.play().catch(() => {});
+});
+
 document.addEventListener("click", (event) => {
   const link = event.target.closest("a[data-film], a[data-lightbox]");
   if (!link || !mediaDialog.showModal || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
   event.preventDefault();
   const isFilm = link.hasAttribute("data-film");
-  const title = isFilm ? "L’intro OVNI · 9 secondes" : link.dataset.lightbox;
+  const title = isFilm ? "L’intro de Game OverTime · 55 s" : link.dataset.lightbox;
   document.getElementById("media-title").textContent = title;
   const item = document.createElement(isFilm ? "video" : "img");
+  mediaDialog.classList.toggle("film-dialog", isFilm);
+  filmChapters.hidden = !isFilm;
   if (isFilm) {
-    item.controls = true;
-    item.playsInline = true;
-    item.poster = "assets/intro-poster.webp";
-    item.setAttribute("aria-label", "Film d’ouverture de Game OverTime");
-    const track = document.createElement("track");
-    track.kind = "captions";
-    track.label = "Description en français";
-    track.srclang = "fr";
-    track.src = "assets/intro-fr.vtt";
-    item.append(track);
+    prepareFilm(item);
   } else {
     item.alt = title;
   }
@@ -169,9 +208,13 @@ mediaDialog.addEventListener("close", () => {
   const video = mediaContent.querySelector("video");
   if (video) {
     video.pause();
+    video.remove();
     video.removeAttribute("src");
     video.load();
   }
+  delete mediaDialog.dataset.phase;
+  mediaDialog.classList.remove("film-dialog");
+  filmChapters.hidden = true;
   mediaContent.replaceChildren();
 });
 for (const dialog of [consoleDialog, mediaDialog]) {
