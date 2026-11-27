@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#100c1e">
   <title>Game OverTime – L’émulateur rétro pour Android</title>
-  <meta name="description" content="Passe-moi la manette ! Retrouve tes jeux NES, Super NES, Game Boy, Game Boy Color, Game Boy Advance et Nintendo DS sur Android. Six consoles, sans publicité, jusque sur la télé.">
+  <meta name="description" content="Passe-moi la manette ! Retrouve tes jeux NES, Super NES, Game Boy, Game Boy Color, Game Boy Advance et Nintendo DS sur Android. Joue hors connexion, au tactile ou à la manette, sans publicité.">
   <link rel="canonical" href="https://pelleas6.github.io/sites_app_android/game-overtime/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fr_FR">
@@ -147,19 +147,16 @@
       <div class="wrap play-carousel">
         <div class="feature-picker" role="tablist" aria-label="Choisir une fonctionnalité" hidden></div>
 
-        <article class="feature-slide" id="tv-panel" data-label="Télé">
-          <div class="feature-media">
-            <picture>
-              <source media="(max-width: 740px)" srcset="assets/une-vie-chacun-640.webp">
-              <img src="assets/une-vie-chacun.webp" width="1080" height="720" loading="lazy" alt="Sur le canapé, un père passe la manette à sa fille devant la télévision.">
-            </picture>
+        <article class="feature-slide" id="hand-panel" data-label="Tactile">
+          <div class="feature-media feature-phone">
+            <img src="assets/station-nacre.webp" width="1040" height="520" loading="lazy" alt="Le téléphone en paysage, la croix à gauche et les boutons à droite du jeu.">
           </div>
           <div class="feature-copy">
-            <h2>À chacun son <span class="pixel accent-peach">tour.</span></h2>
-            <p>Dans <strong>Réglages → Manette Bluetooth</strong>, active le mode TV. Avec la manette connectée au téléphone, la partie passe en paysage plein écran.</p>
-            <p>Duplique ensuite l’écran sur un téléviseur compatible, avec Smart View sur un Samsung compatible. Il ne reste qu’à décider qui prend la première vie.</p>
+            <h2>Une partie dans <span class="pixel accent-peach">ta poche.</span></h2>
+            <p>Dans <strong>Pause → Orientation de l’écran</strong>, choisis le portrait ou le paysage pour la console que tu utilises. La croix et les boutons entourent l’image du jeu.</p>
+            <p>Sur Nintendo DS, touche directement l’écran inférieur avec ton doigt pour utiliser le stylet.</p>
           </div>
-          <a class="text-link" href="assets/tele-manette.webp" data-lightbox="Manette Bluetooth et mode TV">Voir la fiche TV <i class="ico zoom-icon" aria-hidden="true"></i></a>
+          <a class="text-link" href="assets/station-nacre-affiche.webp" data-lightbox="Les commandes tactiles en paysage">Voir les commandes à l’écran <i class="ico zoom-icon" aria-hidden="true"></i></a>
         </article>
 
         <article class="feature-slide" id="bluetooth-panel" data-label="Bluetooth">
@@ -198,16 +195,17 @@
           <a class="text-link" href="assets/editeur-vol-canyon.webp" data-lightbox="L’éditeur des commandes tactiles">Agrandir l’éditeur <i class="ico zoom-icon" aria-hidden="true"></i></a>
         </article>
 
-        <article class="feature-slide" id="hand-panel" data-label="Tactile">
-          <div class="feature-media feature-phone">
-            <img src="assets/station-nacre.webp" width="1040" height="520" loading="lazy" alt="Le téléphone en paysage, la croix à gauche et les boutons à droite du jeu.">
+        <article class="feature-slide" id="tv-panel" data-label="Télé">
+          <div class="feature-media">
+            <picture>
+              <source media="(max-width: 740px)" srcset="assets/une-vie-chacun-640.webp?v=2">
+              <img src="assets/une-vie-chacun.webp?v=2" width="1120" height="630" loading="lazy" alt="Deux mains tiennent un téléphone devant un jeu de plateformes. Au fond du salon, un téléviseur affiche la même scène.">
+            </picture>
           </div>
           <div class="feature-copy">
-            <h2>Une partie dans <span class="pixel accent-peach">ta poche.</span></h2>
-            <p>Dans <strong>Pause → Orientation de l’écran</strong>, choisis le portrait ou le paysage pour la console que tu utilises. La croix et les boutons entourent l’image du jeu.</p>
-            <p>Sur Nintendo DS, touche directement l’écran inférieur avec ton doigt pour utiliser le stylet.</p>
+            <h2>Sur un <span class="pixel accent-peach">second écran.</span></h2>
+            <p>Si ton téléphone reconnaît un écran compatible, ouvre <strong>Pause → Activer le mode TV</strong>. Tu gardes les commandes sur le téléphone.</p>
           </div>
-          <a class="text-link" href="assets/station-nacre-affiche.webp" data-lightbox="Les commandes tactiles en paysage">Voir les commandes à l’écran <i class="ico zoom-icon" aria-hidden="true"></i></a>
         </article>
 
         <div class="feature-arrows" role="group" aria-label="Parcourir les fonctionnalités" hidden>
